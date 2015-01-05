@@ -9,6 +9,6 @@ package main
 import "github.com/mikebeyer/env"
 
 func main() {
-  port := env.Getenv("PORT", "8080")
+  port := env.Get("PORT", "8080")
 }
 ~~~
