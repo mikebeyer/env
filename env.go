@@ -2,10 +2,14 @@ package env
 
 import "os"
 
-func Get(env string, def string) string {
-	val := os.Getenv(env)
+func Get(key string, def string) string {
+	val := os.Getenv(key)
 	if val == "" {
 		val = def
 	}
 	return val
+}
+
+func Set(key string, val string) error {
+	return os.Setenv(key, val)
 }
