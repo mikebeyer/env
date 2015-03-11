@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func Get(key string, def string) string {
+func String(key string, def string) string {
 	val := os.Getenv(key)
 	if val == "" {
 		return def
