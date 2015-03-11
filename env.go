@@ -1,3 +1,4 @@
+// Package env provides convenience wrapper around getting environment variables.
 package env
 
 import (
@@ -5,6 +6,8 @@ import (
 	"strconv"
 )
 
+// String gets string variable from the environment and
+// returns it if it exists, otherwise it returns the default.
 func String(key string, def string) string {
 	val := os.Getenv(key)
 	if val == "" {
@@ -13,6 +16,8 @@ func String(key string, def string) string {
 	return val
 }
 
+// Int gets int variable from the environment and
+// returns it if it exists, otherwise it returns the default.
 func Int(key string, def int) int {
 	val := os.Getenv(key)
 	if val == "" {
@@ -26,6 +31,8 @@ func Int(key string, def int) int {
 	return i
 }
 
+// Bool gets boolean variable from the environment and
+// returns it if it exists, otherwise it returns the default.
 func Bool(key string, def bool) bool {
 	val := os.Getenv(key)
 	if val == "" {
@@ -39,6 +46,8 @@ func Bool(key string, def bool) bool {
 	return b
 }
 
+// Float gets float variable with a provided bit type from the environment and
+// returns it if it exists, otherwise it returns the default.
 func Float(key string, def float64, bit int) float64 {
 	val := os.Getenv(key)
 	if val == "" {
